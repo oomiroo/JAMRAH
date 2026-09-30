@@ -1,0 +1,553 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>جمرة — تجربة طعام عربية ذكية</title>
+<style>
+:root{--ink:#120c09;--ink2:#24110c;--paper:#fbf3e8;--paper2:#f3e3cf;--red:#ff1808;--red2:#a90804;--orange:#ff6b00;--yellow:#ffd500;--cream:#fff8ee;--muted:#7d6c61;--line:#d7c2ad;--white:#fff;--shadow:0 18px 50px rgba(53,15,6,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;overflow-x:hidden}button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.container{width:min(1220px,calc(100% - 34px));margin:auto}
+.logo-lockup{display:flex;align-items:center;gap:10px;min-width:max-content}.logo-word{font-weight:1000;font-size:34px;letter-spacing:-2px;color:var(--ink)}.logo-sub{font-size:9px;letter-spacing:2.4px;color:var(--muted);display:block;margin-top:-3px}.logo-mark{width:42px;height:48px}.logo-mark .ring{fill:none;stroke:var(--ink);stroke-width:2.2}.logo-mark .ember1{fill:var(--red)}.logo-mark .ember2{fill:var(--orange)}.logo-mark .ember3{fill:var(--yellow)}.logo-mark .cut{fill:var(--paper)}
+.nav{position:sticky;top:0;z-index:80;background:rgba(251,243,232,.91);backdrop-filter:blur(14px);border-bottom:1px solid rgba(18,12,9,.13)}.nav-inner{height:82px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}.nav-links{display:flex;justify-content:center;gap:20px;font-size:13px;font-weight:800}.nav-links a{padding:30px 0;position:relative}.nav-links a:after{content:"";position:absolute;right:0;bottom:20px;width:0;height:3px;background:var(--red);transition:.25s}.nav-links a:hover:after{width:100%}.nav-actions{display:flex;align-items:center;gap:8px}.icon-btn,.pill-btn{border:1px solid var(--ink);background:transparent;color:var(--ink);font-weight:900}.icon-btn{width:42px;height:42px;border-radius:50%}.pill-btn{height:42px;border-radius:999px;padding:0 15px}.pill-btn.hot{background:var(--ink);color:#fff}.lang{min-width:50px}
+.hero{padding:26px 0 16px}.hero-shell{min-height:660px;border:1px solid var(--ink);border-radius:30px;overflow:hidden;background:var(--cream);display:grid;grid-template-columns:1.07fr .93fr;box-shadow:var(--shadow)}.hero-copy{padding:64px 58px;display:flex;flex-direction:column;justify-content:center}.hero-eyebrow{font-size:12px;font-weight:1000;color:var(--red);display:flex;gap:10px;align-items:center}.hero-eyebrow:before{content:"";width:42px;height:3px;background:var(--red)}.hero h1{font-size:clamp(72px,9vw,132px);line-height:.84;letter-spacing:-7px;margin:26px 0 24px}.hero h1 em{font-style:normal;color:var(--red)}.hero-desc{max-width:600px;color:var(--muted);line-height:1.95;font-size:17px;margin:0}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:14px;padding:13px 18px;font-weight:1000;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--red);border-color:var(--red);color:#fff}.btn.dark{background:var(--ink);color:#fff}.btn.yellow{background:var(--yellow)}.hero-mini{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px}.hero-mini b{font-size:23px;display:block}.hero-mini span{font-size:11px;color:var(--muted)}
+.hero-visual{background:var(--ink);position:relative;overflow:hidden;min-height:660px;color:#fff}.hero-visual .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:38px 38px}.orbit{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.2)}.o1{width:520px;height:520px;right:-120px;top:40px}.o2{width:350px;height:350px;left:-80px;bottom:-70px;border-color:rgba(255,213,0,.4)}.sun{position:absolute;width:250px;height:250px;border-radius:50%;background:var(--red);right:95px;top:155px;box-shadow:0 0 0 24px rgba(255,24,8,.12)}.sun:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:var(--yellow);left:70px;top:70px}.flame-art{position:absolute;right:155px;top:105px;width:145px;height:260px;z-index:3}.flame-art .f1{position:absolute;inset:0;background:var(--orange);clip-path:polygon(55% 0,75% 22%,67% 44%,90% 68%,70% 100%,32% 94%,10% 70%,25% 43%,42% 25%)}.flame-art .f2{position:absolute;inset:82px 38px 28px;background:var(--yellow);border-radius:56% 44% 52% 48%}.hero-stamp{position:absolute;right:50px;bottom:48px;z-index:5;border:1px solid rgba(255,255,255,.45);border-radius:18px;padding:17px 18px;min-width:210px;background:rgba(255,255,255,.06);backdrop-filter:blur(7px)}.hero-stamp small{color:#dbc6ba}.hero-stamp strong{display:block;font-size:22px;margin-top:5px}.side-word{position:absolute;left:-24px;top:175px;font-size:86px;font-weight:1000;transform:rotate(-90deg);color:rgba(255,255,255,.08);letter-spacing:-5px}
+.shortcuts{padding:18px 0 0}.short-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.short{border:1px solid var(--ink);border-radius:16px;padding:16px 12px;background:#fff;min-height:92px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.short:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}.short i{font-style:normal;font-size:22px}.short b{font-size:13px}
+.section{padding:86px 0}.section-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px}.section-kicker{font-size:11px;color:var(--red);font-weight:1000}.section-title{font-size:46px;letter-spacing:-2px;margin:6px 0 0}.section-head p{max-width:520px;color:var(--muted);line-height:1.8;margin:0}
+.menu{background:#fff}.toolbar{display:grid;grid-template-columns:1.1fr repeat(3,.65fr);gap:10px;margin-bottom:18px}.control{height:48px;border:1px solid var(--line);background:var(--cream);border-radius:12px;padding:0 13px;outline:none}.menu-cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.cat-btn{border:1px solid var(--ink);background:transparent;border-radius:999px;padding:9px 14px;font-weight:800}.cat-btn.active{background:var(--ink);color:#fff}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product{border:1px solid var(--line);border-radius:20px;background:var(--paper);overflow:hidden;transition:.22s}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product-visual{height:150px;display:grid;place-items:center;position:relative;background:linear-gradient(135deg,#ffe9cc,#ffc58c)}.product:nth-child(4n+2) .product-visual{background:linear-gradient(135deg,#ffe3dc,#ff9d80)}.product:nth-child(4n+3) .product-visual{background:linear-gradient(135deg,#fff1a8,#ffb000)}.product:nth-child(4n+4) .product-visual{background:linear-gradient(135deg,#ffd0c7,#c1160b)}.plate{width:86px;height:86px;border-radius:50%;background:#fff;border:5px solid rgba(18,12,9,.15);position:relative;box-shadow:0 12px 25px rgba(81,27,8,.15)}.plate:before{content:"";position:absolute;inset:18px;border-radius:50%;background:var(--red)}.plate:after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:var(--yellow);left:14px;top:14px}.food-mark{position:absolute;font-weight:1000;font-size:11px;color:rgba(18,12,9,.55);bottom:11px;left:13px}.product-body{padding:15px}.product-top{display:flex;justify-content:space-between;gap:10px}.product h3{font-size:15px;margin:0}.price{font-weight:1000;color:var(--red)}.product p{font-size:11px;color:var(--muted);line-height:1.6;min-height:36px}.meta{display:flex;gap:5px;flex-wrap:wrap;margin:9px 0}.meta span{font-size:9px;border:1px solid var(--line);border-radius:999px;padding:4px 7px;background:#fff}.product-actions{display:flex;gap:7px}.add,.fav{border:0;border-radius:10px;padding:9px;font-weight:900}.add{flex:1;background:var(--ink);color:#fff}.fav{width:38px;background:#eadfce}
+.smart{background:var(--ink);color:#fff;position:relative;overflow:hidden}.smart:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--red);left:-240px;top:-100px}.smart-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;position:relative;z-index:2}.smart-copy h2{font-size:56px;margin:6px 0 16px}.smart-copy p{color:#d5bfb4;line-height:1.9}.smart-form{background:var(--cream);color:var(--ink);border-radius:24px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.smart-form .full{grid-column:span 2}.smart-result{grid-column:span 2;border-top:1px solid var(--line);padding-top:15px;margin-top:4px}.result-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.occasion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.occasion-card{min-height:230px;border:1px solid var(--ink);border-radius:22px;padding:22px;background:#fff;display:flex;flex-direction:column;justify-content:space-between}.occasion-card:nth-child(2){background:var(--yellow)}.occasion-card:nth-child(3){background:var(--red);color:#fff}.occasion-card:nth-child(4){background:var(--ink);color:#fff}.occasion-card .num{font-size:54px;font-weight:1000;opacity:.12}.occasion-card h3{font-size:22px;margin:0 0 8px}.occasion-card p{font-size:12px;line-height:1.7;margin:0 0 14px}.occasion-card button{align-self:flex-start}
+.calendar{background:var(--paper2)}.calendar-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form-grid .full{grid-column:span 2}.form-grid input,.form-grid select,.form-grid textarea{width:100%;min-height:45px;border:1px solid var(--line);border-radius:11px;background:var(--cream);padding:11px;outline:none}.booking-list{display:grid;gap:9px}.booking{border:1px solid var(--line);border-radius:13px;padding:12px;display:flex;justify-content:space-between;gap:12px;align-items:center}.booking strong{display:block;font-size:13px}.booking small{color:var(--muted)}.booking-actions{display:flex;gap:6px}.mini{border:0;border-radius:8px;padding:7px 9px;font-size:10px;font-weight:900}.mini.dark{background:var(--ink);color:#fff}.mini.red{background:#fee0dc;color:#a00000}
+.swap{background:#fff}.swap-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:20px}.swap-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.swap-mode{border:1px solid var(--line);border-radius:14px;padding:13px;background:var(--cream);text-align:right}.swap-mode.active{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red);background:#fff3ef}.swap-result{min-height:280px;border:1px solid var(--ink);border-radius:22px;padding:20px;background:var(--paper)}.swap-item{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.builder{background:var(--orange)}.builder-box{background:var(--cream);border:1px solid var(--ink);border-radius:26px;display:grid;grid-template-columns:.85fr 1.15fr;overflow:hidden}.builder-side{background:var(--deep);color:#fff;padding:36px;position:relative;overflow:hidden}.builder-side:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:var(--red);left:-100px;bottom:-100px}.builder-side h2{font-size:48px;margin:0 0 15px;position:relative;z-index:2}.builder-side p{color:#efcfc4;line-height:1.8;position:relative;z-index:2}.builder-form{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.builder-preview{grid-column:span 2;border:1px dashed var(--line);border-radius:14px;padding:14px}
+.overlay{position:fixed;inset:0;background:rgba(18,12,9,.62);z-index:110;display:none;place-items:center;padding:18px}.overlay.show{display:grid}.modal{width:min(560px,100%);max-height:90vh;overflow:auto;background:var(--cream);border-radius:24px;padding:22px;box-shadow:0 30px 90px #0008}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.close{border:0;background:#eadfce;width:36px;height:36px;border-radius:50%}.modal h3{font-size:26px;margin:0}.profile-note{font-size:11px;color:var(--muted);line-height:1.7;margin:10px 0 0}
+.cart{position:fixed;top:0;bottom:0;left:-410px;width:min(400px,94vw);background:var(--cream);z-index:120;transition:.32s;box-shadow:20px 0 80px #0005;padding:22px;overflow:auto}.cart.open{left:0}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart-item{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.cart-total{font-size:20px;font-weight:1000;color:var(--deep);margin:18px 0}.toast{position:fixed;right:18px;bottom:18px;z-index:150;background:var(--ink);color:#fff;padding:12px 17px;border-radius:999px;opacity:0;transform:translateY(15px);transition:.2s}.toast.show{opacity:1;transform:none}
+.footer{background:#0f0907;color:#dbc6bb;padding:46px 0 24px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}.footer .logo-word{color:#fff}.footer h4{color:#fff;margin-top:0}.footer p{font-size:12px;line-height:1.8}.footer small{display:block;margin-top:28px;border-top:1px solid #3b2a24;padding-top:18px;color:#8e7469}
+@media(max-width:1100px){.nav-links{display:none}.short-grid{grid-template-columns:repeat(3,1fr)}.product-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.hero-shell{grid-template-columns:1fr}.hero-visual{min-height:520px}.hero-copy{padding:50px 28px}.product-grid{grid-template-columns:repeat(2,1fr)}.smart-grid,.calendar-grid,.swap-grid,.builder-box{grid-template-columns:1fr}.occasion-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.logo-word{font-size:28px}.nav-actions .lang{display:none}.pill-btn{padding:0 11px;font-size:11px}.hero h1{font-size:66px}.hero-copy{padding:42px 22px}.hero-visual{min-height:430px}.sun{right:30px;top:110px}.flame-art{right:85px;top:60px}.hero-stamp{right:20px;bottom:20px}.side-word{display:none}.short-grid{grid-template-columns:1fr 1fr}.short{min-height:84px}.section{padding:58px 0}.section-head{display:block}.section-title{font-size:36px}.section-head p{margin-top:12px}.toolbar{grid-template-columns:1fr}.product-grid{grid-template-columns:1fr}.smart-form,.form-grid,.builder-form{grid-template-columns:1fr}.smart-form .full,.form-grid .full,.builder-preview{grid-column:auto}.occasion-grid{grid-template-columns:1fr}.swap-options{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+
+/* ===== FORM VISIBILITY FIX ===== */
+input,
+select,
+textarea,
+button {
+  color: var(--ink);
+  -webkit-text-fill-color: currentColor;
+  opacity: 1;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--cream);
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  caret-color: var(--red);
+  font-weight: 700;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8a7467 !important;
+  -webkit-text-fill-color: #8a7467 !important;
+  opacity: 1 !important;
+}
+
+select {
+  color-scheme: light;
+  appearance: auto;
+  -webkit-appearance: menulist;
+}
+
+select option {
+  color: #120c09 !important;
+  background: #fff8ee !important;
+  -webkit-text-fill-color: #120c09 !important;
+}
+
+.control,
+.form-grid input,
+.form-grid select,
+.form-grid textarea,
+.builder-form select,
+.smart-form input,
+.smart-form select,
+.modal input,
+.modal select {
+  color: #120c09 !important;
+  background: #fff8ee !important;
+  -webkit-text-fill-color: #120c09 !important;
+}
+
+.btn,
+.cat-btn,
+.short,
+.swap-mode,
+.mini,
+.add,
+.fav,
+.icon-btn,
+.pill-btn,
+.close {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.btn {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+.btn.primary,
+.btn.dark,
+.pill-btn.hot,
+.add,
+.mini.dark {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.btn.yellow {
+  color: #120c09 !important;
+  -webkit-text-fill-color: #120c09 !important;
+}
+
+.short {
+  color: #120c09 !important;
+  -webkit-text-fill-color: #120c09 !important;
+}
+.short:hover {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.swap-mode {
+  color: #120c09 !important;
+  -webkit-text-fill-color: #120c09 !important;
+}
+
+.cat-btn {
+  color: #120c09 !important;
+  -webkit-text-fill-color: #120c09 !important;
+}
+.cat-btn.active {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* Force readable autofill values in Chrome/Safari */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #120c09 !important;
+  -webkit-box-shadow: 0 0 0 1000px #fff8ee inset !important;
+  box-shadow: 0 0 0 1000px #fff8ee inset !important;
+}
+
+</style></head><body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo-lockup" href="#home">
+      <svg class="logo-mark" viewBox="0 0 64 72" aria-hidden="true">
+        <circle class="ring" cx="31" cy="39" r="22"/>
+        <path class="ember1" d="M32 3c12 13 15 23 9 33-3 5-8 8-13 10 5-8 5-14 0-19-3-4-4-9 4-24z"/>
+        <path class="ember2" d="M26 26c7 6 9 13 5 19-2 4-6 6-10 7 4-6 3-10 0-14-2-3-1-7 5-12z"/>
+        <circle class="ember3" cx="31" cy="41" r="7"/>
+        <path class="cut" d="M13 48h36v7H13z" transform="rotate(-10 31 51)"/>
+      </svg>
+      <span><span class="logo-word">جمرة</span><span class="logo-sub">FIRE • FLAVOR • ARABIA</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#menu" data-ar="القائمة" data-en="Menu">القائمة</a>
+      <a href="#smart" data-ar="رشّح لي" data-en="Recommend">رشّح لي</a>
+      <a href="#occasions" data-ar="حسب المناسبة" data-en="Occasions">حسب المناسبة</a>
+      <a href="#calendar" data-ar="حجوزاتي" data-en="Bookings">حجوزاتي</a>
+      <a href="#builder" data-ar="اصنع طلبك" data-en="Build">اصنع طلبك</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="openProfile()" title="الملف الشخصي">👤</button>
+      <button class="icon-btn" onclick="toggleCart()" title="السلة">🛒<span id="cartCount" style="font-size:10px"></span></button>
+      <button class="pill-btn lang" onclick="toggleLang()" id="langBtn">EN</button>
+      <button class="pill-btn hot" onclick="document.getElementById('calendar').scrollIntoView()" data-ar="احجز" data-en="Book">احجز</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-shell">
+    <div class="hero-copy">
+      <div class="hero-eyebrow" data-ar="تجربة طعام عربية معاصرة" data-en="Modern Arabic dining">تجربة طعام عربية معاصرة</div>
+      <h1><span data-ar="نكهة" data-en="Flavor">نكهة</span><br><em data-ar="تبدأ" data-en="starts">تبدأ</em><br><span data-ar="من النار." data-en="with fire.">من النار.</span></h1>
+      <p class="hero-desc" data-ar="جمرة يحوّل تجربة المطعم إلى رحلة كاملة: تختار، نرشح لك، تحجز، تبني طلبك، تحفظ تفضيلاتك، وتطلب من مكان واحد."
+         data-en="Jamrah turns dining into a complete journey: discover, get recommendations, book, build your meal, save preferences, and order from one place.">
+         جمرة يحوّل تجربة المطعم إلى رحلة كاملة: تختار، نرشح لك، تحجز، تبني طلبك، تحفظ تفضيلاتك، وتطلب من مكان واحد.
+      </p>
+      <div class="hero-cta">
+        <button class="btn primary" onclick="document.getElementById('menu').scrollIntoView()" data-ar="استكشف القائمة" data-en="Explore menu">استكشف القائمة</button>
+        <button class="btn yellow" onclick="document.getElementById('smart').scrollIntoView()" data-ar="رشّح لي وجبة" data-en="Recommend a meal">رشّح لي وجبة</button>
+        <button class="btn dark" onclick="document.getElementById('calendar').scrollIntoView()" data-ar="احجز طاولة" data-en="Book a table">احجز طاولة</button>
+      </div>
+      <div class="hero-mini">
+        <div><b>24</b><span data-ar="صنف أساسي" data-en="core items">صنف أساسي</span></div>
+        <div><b>6</b><span data-ar="أقسام" data-en="categories">أقسام</span></div>
+        <div><b>4.9</b><span data-ar="تقييم تجريبي" data-en="demo rating">تقييم تجريبي</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="grid"></div><div class="orbit o1"></div><div class="orbit o2"></div><div class="sun"></div>
+      <div class="flame-art"><div class="f1"></div><div class="f2"></div></div>
+      <div class="side-word">JAMRAH</div>
+      <div class="hero-stamp"><small data-ar="اليوم في جمرة" data-en="Today at Jamrah">اليوم في جمرة</small><strong data-ar="شعلة اليوم" data-en="Flame of the day">شعلة اليوم</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="shortcuts">
+  <div class="container short-grid">
+    <button class="short" onclick="document.getElementById('smart').scrollIntoView()"><i>✦</i><b data-ar="رشّح لي" data-en="Recommend">رشّح لي</b></button>
+    <button class="short" onclick="document.getElementById('menu').scrollIntoView()"><i>☰</i><b data-ar="القائمة" data-en="Menu">القائمة</b></button>
+    <button class="short" onclick="document.getElementById('occasions').scrollIntoView()"><i>◎</i><b data-ar="حسب المناسبة" data-en="Occasions">حسب المناسبة</b></button>
+    <button class="short" onclick="document.getElementById('calendar').scrollIntoView()"><i>▣</i><b data-ar="تقويم الحجوزات" data-en="Bookings">تقويم الحجوزات</b></button>
+    <button class="short" onclick="document.getElementById('swap').scrollIntoView()"><i>↻</i><b data-ar="بدّل طلبي" data-en="Swap order">بدّل طلبي</b></button>
+    <button class="short" onclick="document.getElementById('builder').scrollIntoView()"><i>＋</i><b data-ar="اصنع طلبك" data-en="Build meal">اصنع طلبك</b></button>
+  </div>
+</section>
+
+<section class="section menu" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker" data-ar="القائمة" data-en="MENU">القائمة</div><h2 class="section-title" data-ar="كل شيء واضح. كل شيء محسوب." data-en="Clear choices. Thoughtful menu.">كل شيء واضح. كل شيء محسوب.</h2></div>
+      <p data-ar="ابحث وفلتر حسب القسم، السعر، مستوى الحار، أو التفضيلات الغذائية. القائمة تتغير فورًا."
+         data-en="Search and filter by category, price, spice level, or dietary preference.">
+         ابحث وفلتر حسب القسم، السعر، مستوى الحار، أو التفضيلات الغذائية. القائمة تتغير فورًا.
+      </p>
+    </div>
+
+    <div class="toolbar">
+      <input class="control" id="searchInput" placeholder="ابحث عن طبق..." oninput="renderProducts()">
+      <select class="control" id="priceFilter" onchange="renderProducts()">
+        <option value="all">كل الأسعار</option><option value="low">أقل من 30</option><option value="mid">30 - 60</option><option value="high">أكثر من 60</option>
+      </select>
+      <select class="control" id="spiceFilter" onchange="renderProducts()">
+        <option value="all">كل درجات الحار</option><option value="0">بدون حار</option><option value="1">خفيف</option><option value="2">متوسط</option><option value="3">حار</option>
+      </select>
+      <select class="control" id="dietFilter" onchange="renderProducts()">
+        <option value="all">كل الأنواع</option><option value="veg">نباتي</option><option value="protein">بروتين</option>
+      </select>
+    </div>
+    <div class="menu-cats" id="categoryButtons"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<section class="section smart" id="smart">
+  <div class="container smart-grid">
+    <div class="smart-copy">
+      <div class="section-kicker" style="color:var(--yellow)" data-ar="جمرة يعرف ذوقك" data-en="SMART PICKS">جمرة يعرف ذوقك</div>
+      <h2 data-ar="قل لنا مزاجك." data-en="Tell us your mood.">قل لنا مزاجك.</h2>
+      <p data-ar="اختر الجوع، مستوى الحار، الميزانية والتفضيل الغذائي، ونرشح لك تركيبة مناسبة بدل ما تحتار في القائمة."
+         data-en="Choose hunger level, spice, budget and dietary preference and we’ll suggest a combination.">
+         اختر الجوع، مستوى الحار، الميزانية والتفضيل الغذائي، ونرشح لك تركيبة مناسبة بدل ما تحتار في القائمة.
+      </p>
+    </div>
+    <div class="smart-form">
+      <select class="control" id="recHunger"><option value="light">جوع خفيف</option><option value="normal" selected>جوع عادي</option><option value="big">جوع كبير</option></select>
+      <select class="control" id="recSpice"><option value="0">بدون حار</option><option value="1">خفيف</option><option value="2" selected>متوسط</option><option value="3">حار</option></select>
+      <input class="control" id="recBudget" type="number" value="100" min="20" placeholder="الميزانية">
+      <select class="control" id="recDiet"><option value="all">بدون تفضيل</option><option value="veg">نباتي</option><option value="protein">بروتين</option></select>
+      <button class="btn primary full" onclick="recommendMeal()" data-ar="رشّح لي الآن" data-en="Recommend now">رشّح لي الآن</button>
+      <div class="smart-result" id="smartResult"><small style="color:var(--muted)">اختر تفضيلاتك ثم اضغط «رشّح لي الآن».</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="occasions">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker" data-ar="حسب المناسبة" data-en="OCCASIONS">حسب المناسبة</div><h2 class="section-title" data-ar="كل جمعة لها طلبها." data-en="A menu for every gathering.">كل جمعة لها طلبها.</h2></div>
+      <p data-ar="اختيارات جاهزة للعائلة، الأصدقاء، العمل، والاحتفال. كل باقة تنقلك مباشرة إلى طلب مناسب."
+         data-en="Ready-made selections for family, friends, business, and celebrations.">
+         اختيارات جاهزة للعائلة، الأصدقاء، العمل، والاحتفال. كل باقة تنقلك مباشرة إلى طلب مناسب.
+      </p>
+    </div>
+    <div class="occasion-grid">
+      <article class="occasion-card"><div class="num">01</div><div><h3>عائلة</h3><p>أطباق مشاركة + أرز + مقبلات + حلو.</p><button class="btn" onclick="applyOccasion('family')">جهّز الطلب</button></div></article>
+      <article class="occasion-card"><div class="num">02</div><div><h3>أصدقاء</h3><p>مشاوي، مقبلات، ومشروبات للمشاركة.</p><button class="btn" onclick="applyOccasion('friends')">جهّز الطلب</button></div></article>
+      <article class="occasion-card"><div class="num">03</div><div><h3>عمل</h3><p>قائمة مرتبة وسريعة لاجتماعات الغداء.</p><button class="btn yellow" onclick="applyOccasion('business')">جهّز الطلب</button></div></article>
+      <article class="occasion-card"><div class="num">04</div><div><h3>احتفال</h3><p>باقة مشاركة وحلو خاص للحجز الجماعي.</p><button class="btn yellow" onclick="applyOccasion('celebration')">جهّز الطلب</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section calendar" id="calendar">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker" data-ar="الحجوزات والمناسبات" data-en="BOOKINGS">الحجوزات والمناسبات</div><h2 class="section-title" data-ar="احجزها واحفظها." data-en="Book it. Save it.">احجزها واحفظها.</h2></div>
+      <p data-ar="سجّل حجوزاتك ومناسباتك القادمة، واحفظها على جهازك حتى تعود إليها لاحقًا."
+         data-en="Save upcoming reservations and occasions locally on your device.">
+         سجّل حجوزاتك ومناسباتك القادمة، واحفظها على جهازك حتى تعود إليها لاحقًا.
+      </p>
+    </div>
+    <div class="calendar-grid">
+      <div class="panel">
+        <h3>حجز جديد</h3>
+        <div class="form-grid">
+          <input id="bookName" placeholder="اسم الحجز">
+          <input id="bookPhone" placeholder="رقم الجوال">
+          <input id="bookDate" type="date">
+          <input id="bookTime" type="time">
+          <select id="bookPeople"><option>2 أشخاص</option><option>3 أشخاص</option><option>4 أشخاص</option><option>5 أشخاص</option><option>6+ أشخاص</option></select>
+          <select id="bookType"><option>عادي</option><option>عائلي</option><option>مناسبة</option><option>عمل</option></select>
+          <textarea class="full" id="bookNotes" rows="3" placeholder="ملاحظات أو مناسبة خاصة"></textarea>
+          <button class="btn primary full" onclick="addBooking()">حفظ الحجز</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>حجوزاتي القادمة</h3>
+        <div class="booking-list" id="bookingList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section swap" id="swap">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker" data-ar="بدّل طلبي" data-en="SWAP ORDER">بدّل طلبي</div><h2 class="section-title" data-ar="نفس الفكرة. اختيار أذكى." data-en="Same idea. Smarter choice.">نفس الفكرة. اختيار أذكى.</h2></div>
+      <p data-ar="اختر نوع التغيير، وكل خيار يعطي نتيجة مختلفة فعلًا: أوفر، أخف، أفخم، أكثر حار، أو نباتي."
+         data-en="Choose a swap mode: cheaper, lighter, premium, spicier or vegetarian.">
+         اختر نوع التغيير، وكل خيار يعطي نتيجة مختلفة فعلًا: أوفر، أخف، أفخم، أكثر حار، أو نباتي.
+      </p>
+    </div>
+    <div class="swap-grid">
+      <div class="panel">
+        <h3>التغيير المطلوب</h3>
+        <div class="swap-options">
+          <button class="swap-mode active" onclick="setSwapMode('cheaper',this)">💰 أوفر</button>
+          <button class="swap-mode" onclick="setSwapMode('lighter',this)">🥗 أخف</button>
+          <button class="swap-mode" onclick="setSwapMode('premium',this)">✦ أفخم</button>
+          <button class="swap-mode" onclick="setSwapMode('spicy',this)">🔥 أكثر حار</button>
+          <button class="swap-mode" onclick="setSwapMode('veg',this)">🌿 نباتي</button>
+          <button class="swap-mode" onclick="setSwapMode('surprise',this)">◎ مفاجأة جمرة</button>
+        </div>
+        <button class="btn primary" style="width:100%;margin-top:12px" onclick="generateSwap()">بدّل الطلب</button>
+      </div>
+      <div class="swap-result" id="swapResult">
+        <h3>الاقتراح البديل</h3>
+        <p style="color:var(--muted)">اختر طريقة التغيير واضغط «بدّل الطلب».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section builder" id="builder">
+  <div class="container builder-box">
+    <div class="builder-side">
+      <div class="section-kicker" style="color:var(--yellow)">اصنع طلبك</div>
+      <h2>طبقك.<br>بطريقتك.</h2>
+      <p>اختر الأساس والبروتين والجانب والصوص، وسيحسب جمرة السعر ويضيف الطبق المخصص إلى سلتك.</p>
+    </div>
+    <div class="builder-form">
+      <select class="control" id="buildBase" onchange="updateBuilder()"><option value="rice">أرز — 12</option><option value="bread">خبز — 8</option><option value="salad">سلطة — 15</option></select>
+      <select class="control" id="buildProtein" onchange="updateBuilder()"><option value="chicken">دجاج — 25</option><option value="beef">لحم — 38</option><option value="veg">خضار مشوية — 18</option></select>
+      <select class="control" id="buildSide" onchange="updateBuilder()"><option value="hummus">حمص — 10</option><option value="fries">بطاطس — 9</option><option value="soup">شوربة — 12</option></select>
+      <select class="control" id="buildSauce" onchange="updateBuilder()"><option value="smoke">صوص جمرة — 5</option><option value="garlic">ثوم — 4</option><option value="hot">حار — 4</option></select>
+      <div class="builder-preview" id="builderPreview"></div>
+      <button class="btn dark" style="grid-column:span 2" onclick="addBuiltMeal()">أضف الطبق المخصص للسلة</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><div class="logo-lockup"><svg class="logo-mark" viewBox="0 0 64 72"><circle class="ring" cx="31" cy="39" r="22" style="stroke:#fff"/><path class="ember1" d="M32 3c12 13 15 23 9 33-3 5-8 8-13 10 5-8 5-14 0-19-3-4-4-9 4-24z"/><path class="ember2" d="M26 26c7 6 9 13 5 19-2 4-6 6-10 7 4-6 3-10 0-14-2-3-1-7 5-12z"/><circle class="ember3" cx="31" cy="41" r="7"/></svg><span><span class="logo-word">جمرة</span><span class="logo-sub">FIRE • FLAVOR • ARABIA</span></span></div><p>تجربة مطعم عربية معاصرة تجمع الاختيار الذكي، الطلب، الحجز، والتخصيص في مكان واحد.</p></div>
+    <div><h4>استكشف</h4><p><a href="#menu">القائمة</a></p><p><a href="#smart">رشّح لي</a></p><p><a href="#builder">اصنع طلبك</a></p></div>
+    <div><h4>الحجز</h4><p><a href="#calendar">حجز طاولة</a></p><p><a href="#occasions">حسب المناسبة</a></p><p><a href="#swap">بدّل طلبي</a></p></div>
+    <div><h4>ساعات العمل</h4><p>السبت — الخميس<br>1م — 1ص</p><p>الجمعة<br>2م — 2ص</p></div>
+  </div>
+  <div class="container"><small>© 2026 جمرة — نموذج تفاعلي تجريبي</small></div>
+</footer>
+
+<div class="overlay" id="profileOverlay" onclick="if(event.target===this)closeProfile()">
+  <div class="modal">
+    <div class="modal-head"><h3>ملفي في جمرة</h3><button class="close" onclick="closeProfile()">×</button></div>
+    <div class="form-grid">
+      <input id="profileName" placeholder="الاسم"><input id="profilePhone" placeholder="رقم الجوال">
+      <select id="profileBranch"><option>فرع الرياض</option><option>فرع شمال الرياض</option><option>فرع شرق الرياض</option></select>
+      <select id="profileSpice"><option value="0">بدون حار</option><option value="1">خفيف</option><option value="2">متوسط</option><option value="3">حار</option></select>
+      <select id="profileDiet"><option value="all">بدون تفضيل غذائي</option><option value="veg">نباتي</option><option value="protein">أفضّل البروتين</option></select>
+      <input id="profileAllergy" placeholder="حساسية/مكونات أتجنبها">
+      <button class="btn primary full" onclick="saveProfile()">حفظ الملف</button>
+    </div>
+    <p class="profile-note">هذه البيانات محفوظة محليًا في متصفحك ضمن هذا النموذج التجريبي.</p>
+  </div>
+</div>
+
+<aside class="cart" id="cart">
+  <div class="cart-head"><h3>سلتك</h3><button class="close" onclick="toggleCart()">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-total" id="cartTotal">الإجمالي: 0 ر.س</div>
+  <button class="btn primary" style="width:100%" onclick="showToast('تم تجهيز طلبك المبدئي')">إكمال الطلب</button>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+let lang='ar', activeCategory='all', swapMode='cheaper';
+let cart=[];
+const CART_KEY='jamrahCart', BOOK_KEY='jamrahBookings', PROFILE_KEY='jamrahProfile';
+
+const products=[
+{id:1,ar:'ضلوع جمرة',en:'Jamrah Ribs',cat:'grill',price:82,spice:2,diet:'protein',desc:'ضلوع مطهوة ببطء ثم تُنهى على حرارة عالية.'},
+{id:2,ar:'مشكل الفحم',en:'Charcoal Mix',cat:'grill',price:96,spice:1,diet:'protein',desc:'تشكيلة لحوم ودجاج للمشاركة.'},
+{id:3,ar:'شيش طاووق',en:'Shish Tawook',cat:'grill',price:49,spice:1,diet:'protein',desc:'دجاج متبل باللبن والليمون والثوم.'},
+{id:4,ar:'كباب لحم',en:'Beef Kebab',cat:'grill',price:58,spice:2,diet:'protein',desc:'لحم متبل ومشوي على نار مباشرة.'},
+{id:5,ar:'كبسة جمرة',en:'Jamrah Kabsa',cat:'rice',price:58,spice:2,diet:'protein',desc:'أرز بسمتي مع دجاج مشوي ودقوس.'},
+{id:6,ar:'أرز لحم مدخن',en:'Smoked Beef Rice',cat:'rice',price:74,spice:1,diet:'protein',desc:'أرز عطري مع لحم مطهو ببطء.'},
+{id:7,ar:'أرز خضار',en:'Vegetable Rice',cat:'rice',price:32,spice:0,diet:'veg',desc:'أرز متبل مع خضار موسمية.'},
+{id:8,ar:'مندي دجاج',en:'Chicken Mandi',cat:'rice',price:52,spice:1,diet:'protein',desc:'دجاج طري مع أرز مندي.'},
+{id:9,ar:'حمص مدخن',en:'Smoked Hummus',cat:'starter',price:22,spice:0,diet:'veg',desc:'حمص كريمي بلمسة فحم.'},
+{id:10,ar:'متبل باذنجان',en:'Eggplant Mutabbal',cat:'starter',price:21,spice:0,diet:'veg',desc:'باذنجان مشوي وطحينة وليمون.'},
+{id:11,ar:'بطاطس جمرة',en:'Jamrah Potatoes',cat:'starter',price:19,spice:2,diet:'veg',desc:'بطاطس محمصة بتتبيلة جمرة.'},
+{id:12,ar:'مقبلات مشكلة',en:'Mixed Starters',cat:'starter',price:38,spice:1,diet:'veg',desc:'حمص، متبل، لبنة وخضار.'},
+{id:13,ar:'شوربة عدس',en:'Lentil Soup',cat:'soup',price:19,spice:0,diet:'veg',desc:'عدس أحمر وكمون ولمسة ليمون.'},
+{id:14,ar:'شوربة دجاج',en:'Chicken Soup',cat:'soup',price:24,spice:1,diet:'protein',desc:'مرق دجاج خفيف وأعشاب.'},
+{id:15,ar:'شوربة طماطم',en:'Tomato Soup',cat:'soup',price:20,spice:1,diet:'veg',desc:'طماطم مشوية وكريمة خفيفة.'},
+{id:16,ar:'شوربة لحم',en:'Beef Soup',cat:'soup',price:28,spice:1,diet:'protein',desc:'مرق لحم غني وخضار.'},
+{id:17,ar:'كنافة ساخنة',en:'Hot Kunafa',cat:'dessert',price:28,spice:0,diet:'veg',desc:'كنافة مقرمشة وفستق.'},
+{id:18,ar:'مهلبية زعفران',en:'Saffron Muhallabia',cat:'dessert',price:24,spice:0,diet:'veg',desc:'مهلبية باردة بالزعفران.'},
+{id:19,ar:'تمر وطحينة',en:'Dates & Tahini',cat:'dessert',price:18,spice:0,diet:'veg',desc:'تمر فاخر مع طحينة وحبوب.'},
+{id:20,ar:'كيكة تمر',en:'Date Cake',cat:'dessert',price:26,spice:0,diet:'veg',desc:'كيكة دافئة وصوص تمر.'},
+{id:21,ar:'ليمون ونعناع',en:'Lemon Mint',cat:'drink',price:16,spice:0,diet:'veg',desc:'ليمون طازج ونعناع.'},
+{id:22,ar:'كركديه بارد',en:'Iced Hibiscus',cat:'drink',price:15,spice:0,diet:'veg',desc:'كركديه بارد ومتوازن.'},
+{id:23,ar:'شاي جمرة',en:'Jamrah Tea',cat:'drink',price:12,spice:0,diet:'veg',desc:'شاي أسود بتوابل خفيفة.'},
+{id:24,ar:'قهوة عربية',en:'Arabic Coffee',cat:'drink',price:18,spice:0,diet:'veg',desc:'قهوة عربية مع هيل.'}
+];
+const cats=[['all','الكل','All'],['grill','المشويات','Grills'],['rice','الأرز','Rice'],['starter','المقبلات','Starters'],['soup','الشوربات','Soups'],['dessert','الحلويات','Desserts'],['drink','المشروبات','Drinks']];
+
+function loadJSON(k,fallback){try{const v=JSON.parse(localStorage.getItem(k));return v??fallback}catch(e){return fallback}}
+function saveJSON(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function money(n){return `${n} ${lang==='ar'?'ر.س':'SAR'}`}
+function pname(p){return lang==='ar'?p.ar:p.en}
+function getProduct(id){return products.find(p=>p.id===Number(id))}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),2200)}
+
+function renderCategories(){
+  document.getElementById('categoryButtons').innerHTML=cats.map(c=>`<button class="cat-btn ${activeCategory===c[0]?'active':''}" onclick="setCategory('${c[0]}')">${lang==='ar'?c[1]:c[2]}</button>`).join('');
+}
+function setCategory(c){activeCategory=c;renderCategories();renderProducts()}
+function renderProducts(){
+  const q=(document.getElementById('searchInput').value||'').trim().toLowerCase();
+  const pf=document.getElementById('priceFilter').value, sf=document.getElementById('spiceFilter').value, df=document.getElementById('dietFilter').value;
+  const list=products.filter(p=>{
+    if(activeCategory!=='all'&&p.cat!==activeCategory)return false;
+    if(q&&!(`${p.ar} ${p.en} ${p.desc}`.toLowerCase().includes(q)))return false;
+    if(pf==='low'&&p.price>=30)return false;
+    if(pf==='mid'&&(p.price<30||p.price>60))return false;
+    if(pf==='high'&&p.price<=60)return false;
+    if(sf!=='all'&&p.spice!==Number(sf))return false;
+    if(df!=='all'&&p.diet!==df)return false;
+    return true;
+  });
+  const spiceLabels=lang==='ar'?['بدون حار','خفيف','متوسط','حار']:['No spice','Mild','Medium','Hot'];
+  document.getElementById('productGrid').innerHTML=list.length?list.map(p=>`
+    <article class="product">
+      <div class="product-visual"><div class="plate"></div><div class="food-mark">${p.cat.toUpperCase()}</div></div>
+      <div class="product-body">
+        <div class="product-top"><h3>${pname(p)}</h3><span class="price">${money(p.price)}</span></div>
+        <p>${p.desc}</p>
+        <div class="meta"><span>${spiceLabels[p.spice]}</span><span>${p.diet==='veg'?(lang==='ar'?'نباتي':'Vegetarian'):(lang==='ar'?'بروتين':'Protein')}</span></div>
+        <div class="product-actions"><button class="add" onclick="addToCart(${p.id})">${lang==='ar'?'أضف للسلة':'Add to cart'}</button><button class="fav" onclick="showToast('♡ محفوظ')">♡</button></div>
+      </div>
+    </article>`).join(''):`<p>${lang==='ar'?'لا توجد نتائج مطابقة.':'No matching items.'}</p>`;
+}
+function addToCart(id){
+  const p=getProduct(id);cart.push({id:p.id,name:pname(p),price:p.price});saveJSON(CART_KEY,cart);renderCart();showToast((lang==='ar'?'تمت إضافة ':'Added ')+pname(p))
+}
+function renderCart(){
+  document.getElementById('cartCount').textContent=cart.length?cart.length:'';
+  document.getElementById('cartItems').innerHTML=cart.length?cart.map((x,i)=>`<div class="cart-item"><span>${x.name}</span><span>${money(x.price)} <button onclick="removeCart(${i})" style="border:0;background:none;color:#b00">×</button></span></div>`).join(''):`<p style="color:var(--muted)">${lang==='ar'?'السلة فارغة.':'Cart is empty.'}</p>`;
+  document.getElementById('cartTotal').textContent=(lang==='ar'?'الإجمالي: ':'Total: ')+money(cart.reduce((s,x)=>s+x.price,0))
+}
+function removeCart(i){cart.splice(i,1);saveJSON(CART_KEY,cart);renderCart()}
+function toggleCart(){document.getElementById('cart').classList.toggle('open')}
+
+function recommendMeal(){
+  const hunger=document.getElementById('recHunger').value, spice=Number(document.getElementById('recSpice').value), budget=Number(document.getElementById('recBudget').value||100), diet=document.getElementById('recDiet').value;
+  let pool=products.filter(p=>(diet==='all'||p.diet===diet)&&Math.abs(p.spice-spice)<=1).sort((a,b)=>b.price-a.price);
+  const count=hunger==='light'?2:hunger==='big'?4:3;let chosen=[],total=0;
+  for(const p of pool){if(chosen.length>=count)break;if(total+p.price<=budget||chosen.length===0){chosen.push(p);total+=p.price}}
+  if(!chosen.length){chosen=[products[8]];total=products[8].price}
+  document.getElementById('smartResult').innerHTML=`
+    <b>${lang==='ar'?'ترشيح جمرة':'Jamrah recommendation'}</b>
+    ${chosen.map(p=>`<div class="result-row"><span>${pname(p)}</span><span>${money(p.price)}</span></div>`).join('')}
+    <div class="result-row"><strong>${lang==='ar'?'الإجمالي':'Total'}</strong><strong>${money(total)}</strong></div>
+    <button class="btn dark" style="width:100%;margin-top:10px" onclick="addRecommendation([${chosen.map(p=>p.id).join(',')}])">${lang==='ar'?'أضف الترشيح للسلة':'Add recommendation'}</button>`;
+}
+function addRecommendation(ids){ids.forEach(id=>addToCart(id))}
+
+const occasionSets={family:[2,6,12,17,21],friends:[2,11,12,21,22],business:[3,5,9,13,21],celebration:[1,6,12,17,24]};
+function applyOccasion(key){
+  cart=occasionSets[key].map(id=>{const p=getProduct(id);return{id:p.id,name:pname(p),price:p.price}});
+  saveJSON(CART_KEY,cart);renderCart();showToast(lang==='ar'?'تم تجهيز باقة المناسبة':'Occasion bundle is ready');toggleCart()
+}
+
+function getBookings(){return loadJSON(BOOK_KEY,[])}
+function addBooking(){
+  const name=document.getElementById('bookName').value.trim(),phone=document.getElementById('bookPhone').value.trim(),date=document.getElementById('bookDate').value,time=document.getElementById('bookTime').value,people=document.getElementById('bookPeople').value,type=document.getElementById('bookType').value,notes=document.getElementById('bookNotes').value.trim();
+  if(!name||!date||!time){showToast('أكمل الاسم والتاريخ والوقت');return}
+  const items=getBookings();items.push({id:Date.now(),name,phone,date,time,people,type,notes});items.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));saveJSON(BOOK_KEY,items);renderBookings();showToast('تم حفظ الحجز')
+}
+function renderBookings(){
+  const list=getBookings(),box=document.getElementById('bookingList');
+  box.innerHTML=list.length?list.map(x=>`<div class="booking"><div><strong>${x.name} — ${x.type}</strong><small>${x.date} • ${x.time} • ${x.people}</small></div><div class="booking-actions"><button class="mini dark" onclick="prepBooking(${x.id})">جهّز طلب</button><button class="mini red" onclick="deleteBooking(${x.id})">حذف</button></div></div>`).join(''):'<p style="color:var(--muted)">لا توجد حجوزات محفوظة بعد.</p>'
+}
+function deleteBooking(id){saveJSON(BOOK_KEY,getBookings().filter(x=>x.id!==id));renderBookings()}
+function prepBooking(){document.getElementById('smart').scrollIntoView();showToast('اختر تفضيلاتك وسنجهز اقتراحًا للحجز')}
+
+function setSwapMode(mode,el){swapMode=mode;document.querySelectorAll('.swap-mode').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
+const swapSets={cheaper:[9,13,19],lighter:[9,13,21],premium:[1,6,17,24],spicy:[4,11,5],veg:[7,10,13,18],surprise:[3,12,20,22]};
+function generateSwap(){
+  const ids=swapSets[swapMode],items=ids.map(getProduct),total=items.reduce((s,p)=>s+p.price,0);
+  const titles={cheaper:'أوفر اختيار',lighter:'اختيار أخف',premium:'اختيار أفخم',spicy:'اختيار أكثر حار',veg:'اختيار نباتي',surprise:'مفاجأة جمرة'};
+  document.getElementById('swapResult').innerHTML=`<h3>${titles[swapMode]}</h3>${items.map(p=>`<div class="swap-item"><span>${pname(p)}</span><strong>${money(p.price)}</strong></div>`).join('')}<div class="swap-item"><strong>الإجمالي</strong><strong>${money(total)}</strong></div><button class="btn primary" style="width:100%;margin-top:12px" onclick="addRecommendation([${ids.join(',')}])">أضف للسلة</button>`
+}
+
+const buildPrices={base:{rice:12,bread:8,salad:15},protein:{chicken:25,beef:38,veg:18},side:{hummus:10,fries:9,soup:12},sauce:{smoke:5,garlic:4,hot:4}};
+const buildLabels={rice:'أرز',bread:'خبز',salad:'سلطة',chicken:'دجاج',beef:'لحم',veg:'خضار مشوية',hummus:'حمص',fries:'بطاطس',soup:'شوربة',smoke:'صوص جمرة',garlic:'ثوم',hot:'حار'};
+function currentBuild(){
+  const b=document.getElementById('buildBase').value,p=document.getElementById('buildProtein').value,s=document.getElementById('buildSide').value,sa=document.getElementById('buildSauce').value;
+  return{b,p,s,sa,total:buildPrices.base[b]+buildPrices.protein[p]+buildPrices.side[s]+buildPrices.sauce[sa]}
+}
+function updateBuilder(){const x=currentBuild();document.getElementById('builderPreview').innerHTML=`<strong>طبقك:</strong> ${buildLabels[x.b]} + ${buildLabels[x.p]} + ${buildLabels[x.s]} + ${buildLabels[x.sa]} <span style="float:left;font-weight:1000;color:var(--red)">${money(x.total)}</span>`}
+function addBuiltMeal(){const x=currentBuild();cart.push({id:'custom-'+Date.now(),name:'طبق مخصص — '+buildLabels[x.p],price:x.total});saveJSON(CART_KEY,cart);renderCart();showToast('تمت إضافة طبقك المخصص')}
+
+function openProfile(){
+  const p=loadJSON(PROFILE_KEY,{});
+  document.getElementById('profileName').value=p.name||'';document.getElementById('profilePhone').value=p.phone||'';document.getElementById('profileBranch').value=p.branch||'فرع الرياض';document.getElementById('profileSpice').value=p.spice??'2';document.getElementById('profileDiet').value=p.diet||'all';document.getElementById('profileAllergy').value=p.allergy||'';document.getElementById('profileOverlay').classList.add('show')
+}
+function closeProfile(){document.getElementById('profileOverlay').classList.remove('show')}
+function saveProfile(){
+  const p={name:document.getElementById('profileName').value.trim(),phone:document.getElementById('profilePhone').value.trim(),branch:document.getElementById('profileBranch').value,spice:document.getElementById('profileSpice').value,diet:document.getElementById('profileDiet').value,allergy:document.getElementById('profileAllergy').value.trim()};
+  saveJSON(PROFILE_KEY,p);document.getElementById('recSpice').value=p.spice;document.getElementById('recDiet').value=p.diet;closeProfile();showToast('تم حفظ ملفك وتطبيق تفضيلاتك')
+}
+function applySavedProfile(){
+  const p=loadJSON(PROFILE_KEY,{});
+  if(p.spice!==undefined)document.getElementById('recSpice').value=p.spice;
+  if(p.diet)document.getElementById('recDiet').value=p.diet
+}
+
+function toggleLang(){
+  lang=lang==='ar'?'en':'ar';document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='ar'?'EN':'ع';
+  document.querySelectorAll('[data-ar]').forEach(el=>el.textContent=lang==='ar'?el.dataset.ar:el.dataset.en);
+  document.getElementById('searchInput').placeholder=lang==='ar'?'ابحث عن طبق...':'Search dishes...';
+  renderCategories();renderProducts();renderCart();updateBuilder()
+}
+
+cart=loadJSON(CART_KEY,[]);
+renderCategories();renderProducts();renderCart();renderBookings();updateBuilder();applySavedProfile();
+</script></body></html>
